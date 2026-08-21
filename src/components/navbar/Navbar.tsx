@@ -1,92 +1,66 @@
 "use client"
-import { HomeNavItem, NavItem } from "./NavItem";
-import React, { useState, useEffect, useRef, use } from "react";
-import { poppins } from "@/utils/fonts";
-import { IoClose } from 'react-icons/io5';
+import { jetbrainsMono } from "@/utils/fonts";
+import { useState } from "react";
 
-const Hamburger: React.FC = () => {
-  return(
-    <div className="space-y-1">
-    <span className="block w-8 h-0.5 bg-white"></span>
-    <span className="block w-8 h-0.5 bg-white"></span>
-    <span className="block w-8 h-0.5 bg-white"></span>
-  </div>
-  )
-}
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Events", href: "/events" },
+  { label: "Projects", href: "#" },
+  { label: "Media", href: "#" },
+  { label: "Resources", href: "/resources" },
+  { label: "About", href: "/about" },
+];
 
-export function Navbar(){
+export function Navbar() {
   const [open, setOpen] = useState(false);
-  let menuRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    let handleClick = (e: MouseEvent) => {
-      if(!menuRef.current?.contains(e.target as Node)){
-        setOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClick);
-    return () => {
-      document.removeEventListener("mousedown", handleClick);
-    };
-  }, []);
+  return (
+    <nav className="sticky top-0 z-50 bg-gray-100/90 backdrop-blur-md border-b border-border">
+      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="/" className="text-xl font-bold tracking-tight">
+          AUCSS
+        </a>
 
-  const toggleMenu = () => {
-    setOpen(!open)
-  }; 
+        <ul className={`${jetbrainsMono.className} hidden md:flex items-center gap-8 text-sm uppercase tracking-wide`}>
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              <a href={link.href} className="text-on-surface-variant hover:text-primary transition-colors">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-const OpenMenu: React.FC = () => {
-  const CloseMenu: React.FC = () => {
-      return(
-      <IoClose className="absolute right-5 top-5 cursor-pointer" size={28} />
-      )
-  }
-  return(
-      <div className="z-50 flex items-end justify-end bg-opacity-50">
-      <div className="absolute top-0 right-0 w-1/2 bg-secondary transition-transform ease-in-out h-full"> 
-      <div className={`${poppins.className} m-4`}>
-      <button onClick={toggleMenu}> <CloseMenu /> </button>
-          <ul>
-          <NavItem href="/about" onClick={toggleMenu}>About</NavItem>
-          <NavItem href="/events" onClick={toggleMenu}>Events</NavItem>
-          <NavItem href="/resources" onClick={toggleMenu}>Resources</NavItem>
-          <NavItem href="/newsletter" onClick={toggleMenu}> Newsletter </NavItem>
-          <NavItem href="/manifesto" onClick={toggleMenu}>Our Manifesto</NavItem>
-          </ul>
-      </div>
-      </div>
-      </div>
-  );
-}; 
-
-  return(
-    <>
-    <nav className={`bg-transparent pt-[4vh] pb-[6vh] px-4 sm:px-8 md:px-12 lg:px-16`}>
-    <ul
-        className={`hidden md:flex items-center justify-around md:justify-end gap-x-4 sm:gap-x-8 md:gap-x-12`}
-      >
-        <HomeNavItem />
-        <NavItem href="/about">About</NavItem>
-        <NavItem href="/events">Events</NavItem>
-        <NavItem href="/resources">Resources</NavItem>
-        <NavItem href="/newsletter"> Newsletter </NavItem>
-        <NavItem href="/manifesto">Our Manifesto</NavItem>
-      </ul>
-      <div className="md:hidden">
-      <div className="flex justify-start absolute">
-      <ul>
-      <HomeNavItem />
-      </ul>
-      </div>
-      <div className="flex justify-end" ref={menuRef}>
-      <button
-        className=""
-        onClick={toggleMenu}
-      >
-        <Hamburger />
+        <button className={`${jetbrainsMono.className} hidden md:inline-block bg-primary text-on-primary px-5 py-2 text-sm uppercase tracking-wide rounded hover:opacity-90 transition-opacity`}>
+          Join Us
         </button>
-        {open && (<OpenMenu/>)}
-        </div>
+
+        <button
+          className="md:hidden flex flex-col gap-1.5"
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle menu"
+        >
+          <span className="block w-6 h-0.5 bg-on-surface"></span>
+          <span className="block w-6 h-0.5 bg-on-surface"></span>
+          <span className="block w-6 h-0.5 bg-on-surface"></span>
+        </button>
       </div>
-      </nav></>
+
+      {open && (
+        <ul className={`${jetbrainsMono.className} md:hidden flex flex-col gap-4 px-6 pb-6 text-sm uppercase tracking-wide`}>
+          {navLinks.map((link) => (
+            <li key={link.label}>
+              
+                <a href={link.href}
+                onClick={() => setOpen(false)}
+                className="text-on-surface-variant hover:text-primary transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </nav>
   );
-};
+}

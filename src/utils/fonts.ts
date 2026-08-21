@@ -1,19 +1,15 @@
-import { Poppins, Bayon, IM_Fell_DW_Pica } from 'next/font/google';
+import { Inter, JetBrains_Mono } from 'next/font/google';
 
-export const poppins = Poppins({
+export const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-poppins',
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  variable: '--font-inter',
+  weight: ['400', '500', '600', '700'],
 });
 
-export const bayon = Bayon({
+export const jetbrainsMono = JetBrains_Mono({
   subsets: ['latin'],
-  weight: '400',
-});
-
-export const IM = IM_Fell_DW_Pica({
-  subsets: ['latin'],
-  weight: '400',
-  style: ['normal','italic'],
+  display: 'swap',
+  variable: '--font-jetbrains-mono',
+  weight: ['400', '500', '700'],
 });

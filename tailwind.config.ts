@@ -1,27 +1,31 @@
 import type { Config } from 'tailwindcss';
 
-const withMT = require("@material-tailwind/react/utils/withMT");
-
-const config: Config = withMT({
-  content: ['./src/pages/**/*.{js,ts,jsx,tsx,mdx}', './src/components/**/*.{js,ts,jsx,tsx,mdx}', './src/app/**/*.{js,ts,jsx,tsx,mdx}'],
+const config: Config = {
+  content: [
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
       colors: {
         primary: '#D80032',
-        secondary: '#1263C7',
-        tertiary: '#D6D6D6',
-        box: "#333533",
-        gray: "#333533",
-        text: '#ffffff',
-        background: '#202020',
-        transparent: 'transparent',
+        'on-primary': '#ffffff',
+        secondary: '#5e5e5e',
+        background: '#f7f9fb',
+        surface: '#ffffff',
+        'surface-container': '#eceef0',
+        'surface-container-low': '#f2f4f6',
+        'on-surface': '#191c1e',
+        'on-surface-variant': '#5d3f3c',
+        border: '#e2e2e2',
+      },
+      fontFamily: {
+        sans: ['var(--font-inter)'],
+        mono: ['var(--font-jetbrains-mono)'],
       },
     },
   },
   plugins: [],
-});
+};
 export default config;
