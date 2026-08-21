@@ -39,20 +39,12 @@ export default function about(){
                 <span className="">
                 <MeetTheTeam type = "CORE" href= 'about/core'/>
                 </span>
-                <MeetTheTeam type = "SOCIAL MEDIA AND MARKETING" href="about/marketing" />
-                <MeetTheTeam type = "OUTREACH AND LOGISTICS" href = "about/outreachlogs" />
-                <MeetTheTeam type = "EVENTS" href = "about/events" />
-                <MeetTheTeam type = "FINANCE" href = "about/finance" />
-                <MeetTheTeam type = "DEV VERTICAL" href="about/dev" />
+                <MeetTheTeam type = "SOCIAL MEDIA AND MARKETING" href="about" />
+                <MeetTheTeam type = "OUTREACH AND LOGISTICS" href = "about" />
+                <MeetTheTeam type = "EVENTS" href = "about" />
+                <MeetTheTeam type = "FINANCE" href = "about" />
+                <MeetTheTeam type = "DEV VERTICAL" href="about" />
                 </div>
-                <footer className={`mt-8 rounded-t-[30px] md:rounded-t-[20px] p-4 px-[40px] md:px-[60px] bg-primary mt-4`}>
-                <p className={`${poppins.className} text-center line-height-[45px] text-xl mb-2 text-tertiary`}>Contact Us</p>
-                <div className={`flex items-center gap-2 -mb-2 md:-mb-0 md:gap-x-4 gap-x-8`}>
-                    <Socials logo={Instagram} href="https://www.instagram.com/cs.ashoka/" />
-                    <Socials logo={Twitter} href="https://twitter.com/cs_ashoka" />
-                    <Socials logo={Email} href="mailto:cs.society@ashoka.edu.in" />
-                    </div>
-                </footer>
                 </div>
         </main>
         </>
