@@ -37,12 +37,12 @@ export default function Home() {
       <section className="py-20 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
           <div className="md:col-span-5">
+            <h2 className="text-3xl font-semibold">Our Mission</h2>
             <span
               className={`${jetbrainsMono.className} text-primary uppercase tracking-widest text-xs block mb-2`}
             >
-              01. Governance
+              01 // Governance & Values
             </span>
-            <h2 className="text-3xl font-semibold">Our Mission</h2>
           </div>
           <div className="md:col-span-7">
             <p className="text-on-surface-variant mb-4 leading-relaxed">
@@ -65,13 +65,9 @@ export default function Home() {
       {/* What we do */}
       <section className="py-20 px-6 bg-surface-container-low border-t border-border">
         <div className="max-w-5xl mx-auto">
-          <span
-            className={`${jetbrainsMono.className} text-primary uppercase tracking-widest text-xs block mb-2`}
-          >
-            02. What we do
-          </span>
+      
           <h2 className="text-3xl font-semibold mb-10">
-            Three things, mainly
+            SOCIETY HIGHLIGHTS
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-surface border border-border p-6 rounded-xl">
@@ -103,7 +99,7 @@ export default function Home() {
             <span
               className={`${jetbrainsMono.className} text-primary uppercase tracking-widest text-xs block mb-2`}
             >
-              03. Happening soon
+              CALENDAR_2026
             </span>
             <h2 className="text-3xl font-semibold">Upcoming events</h2>
           </div>
@@ -123,7 +119,7 @@ export default function Home() {
             <span
               className={`${jetbrainsMono.className} text-primary uppercase tracking-widest text-xs block mb-2`}
             >
-              04. History
+              History
             </span>
             <h2 className="text-3xl font-semibold mb-2">Looking for the old site?</h2>
             <p className="text-on-surface-variant text-sm max-w-md">
