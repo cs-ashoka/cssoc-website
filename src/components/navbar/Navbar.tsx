@@ -16,7 +16,7 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-gray-100/90 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+     <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
         <a href="/" className="flex items-center">
           <Image
             src="/cssoc_logo.jpg"
@@ -26,7 +26,7 @@ export function Navbar() {
             className="object-cover rounded-full border-2 border-on-surface"
           />
         </a>
-        <ul className={`${jetbrainsMono.className} hidden md:flex items-center gap-8 text-sm uppercase tracking-wide`}>
+        <ul className={`${jetbrainsMono.className} hidden md:flex items-center justify-center gap-8 text-sm uppercase tracking-wide`}>
           {navLinks.map((link) => (
             <li key={link.label}>
               <a href={link.href} className="text-on-surface-variant hover:text-primary transition-colors">
@@ -36,14 +36,14 @@ export function Navbar() {
           ))}
         </ul>
 
-        
-  <a href="https://cs-society-ashoka.github.io/Inductions"
+        <div className="flex justify-end"> <a href="https://cs-society-ashoka.github.io/Inductions"
   target="_blank"
   rel="noopener noreferrer"
   className={`${jetbrainsMono.className} hidden md:inline-block bg-primary text-on-primary px-5 py-2 text-sm uppercase tracking-wide rounded hover:opacity-90 transition-opacity`}
 >
   Join Us
-</a>
+</a></div>
+ 
         <button
           className="md:hidden flex flex-col gap-1.5"
           onClick={() => setOpen(!open)}

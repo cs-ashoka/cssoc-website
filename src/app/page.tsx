@@ -1,38 +1,49 @@
 import { inter, jetbrainsMono } from "@/utils/fonts";
 import { Analytics } from '@vercel/analytics/react';
-
+import Image from "next/image";
 export default function Home() {
   return (
     <main className={`${inter.className} min-h-screen bg-background`}>
       {/* Hero */}
-      <section className="relative py-24 px-6 overflow-hidden bg-[#fdf2f2]">
-        <div
-          className="absolute inset-0 opacity-40 pointer-events-none"
-          style={{
-            backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
-            backgroundSize: '32px 32px',
-          }}
-        />
-        <div className="max-w-4xl mx-auto relative z-10 text-left">
-  <span
-    className={`${jetbrainsMono.className} text-primary uppercase tracking-[0.2em] text-sm block mb-4`}
-  >
-    Ashoka University, Estd. 2014
-  </span>
-  <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-4 -ml-1 md:-ml-2">
-  CS Society
-</h1>
-  <p className="text-lg text-on-surface-variant max-w-xl mb-8">
-    A student-run community for anyone into code, computers, and building weird(but cool!) stuff together.
-  </p>
-  <a href="/about"
-    className={`${jetbrainsMono.className} inline-block bg-primary text-on-primary px-6 py-3 uppercase tracking-widest text-sm rounded hover:opacity-90 transition-opacity`}
-  >
-    Learn more
-  </a>
-</div>
-      </section>
-
+<section className="relative py-8 px-6 overflow-hidden bg-[#fdf2f2]">
+  <div
+    className="absolute inset-0 opacity-40 pointer-events-none"
+    style={{
+      backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+      backgroundSize: '32px 32px',
+    }}
+  />
+  <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+    <div className="text-left">
+      <span
+        className={`${jetbrainsMono.className} text-primary uppercase tracking-[0.2em] text-sm block mb-4`}
+      >
+        Ashoka University, Estd. 2014
+      </span>
+      <h1 className="text-5xl md:text-7xl font-bold tracking-tight -ml-1 md:-ml-2 mb-4">
+        CS Society
+      </h1>
+      <p className="text-lg text-on-surface-variant max-w-xl mb-8">
+        A student-run community for anyone into code, computers, and building weird (but cool!) stuff together.
+      </p>
+      
+        <a href="/about"
+        className={`${jetbrainsMono.className} inline-block bg-primary text-on-primary px-6 py-3 uppercase tracking-widest text-sm rounded hover:opacity-90 transition-opacity`}
+      >
+        Learn more
+      </a>
+    </div>
+    <div className="hidden md:flex justify-center items-center">
+      <Image
+        src="/hero_new.png"
+        alt=""
+        width={500}
+        height={500}
+        className="w-full h-auto object-contain"
+      />
+    </div>
+  </div>
+</section>
       {/* Our Mission / Constitution */}
       <section className="py-20 px-6 border-t border-border">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
