@@ -4,7 +4,6 @@ import { poppins } from "@/utils/fonts";
 import Instagram from "../../../public/contact/instalogo.png";
 import Email from "../../../public/contact/emaillogo.png";
 import Twitter from "../../../public/contact/twitterlogo.png";
-import Background from "../../../public/img/aboutbg.png";
 import MeetTheTeam from '@/components/team/box';
 import Socials from "@/components/socials";
 import ToExpand from "@/components/about/aboutus";

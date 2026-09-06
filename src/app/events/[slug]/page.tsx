@@ -2,7 +2,6 @@ import React from "react";
 import { bayon } from "@/utils/fonts";
 import { poppins } from "@/utils/fonts";
 import Image from "next/image";
-import HeroImage from "../../../../public/img/aboutbg.png";
 import { getSortedPostsData } from "@/lib/event-posts";
 import { getPostData } from "@/lib/event-posts";
 import { GalleryWithCarousel } from "@/components/carousel/carousel";
