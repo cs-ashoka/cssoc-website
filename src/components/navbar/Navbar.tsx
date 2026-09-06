@@ -60,6 +60,13 @@ const OpenMenu: React.FC = () => {
 
   return(
     <>
+    <div className="sticky top-0 z-50 bg-primary text-white text-center text-sm py-2">
+      Looking for our current website?{" "}
+      <a href="https://cssoc-ashoka.vercel.app" className="underline hover:opacity-90 transition-opacity">
+        Click here
+      </a>
+      {" "}to visit it.
+    </div>
     <nav className={`bg-transparent pt-[4vh] pb-[6vh] px-4 sm:px-8 md:px-12 lg:px-16`}>
     <ul
         className={`hidden md:flex items-center justify-around md:justify-end gap-x-4 sm:gap-x-8 md:gap-x-12`}
