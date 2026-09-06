@@ -1,9 +1,9 @@
 "use client"
 import { jetbrainsMono } from "@/utils/fonts";
 import { useState } from "react";
+import Image from "next/image";
 
 const navLinks = [
-  { label: "Home", href: "/" },
   { label: "Events", href: "/events" },
   { label: "Projects", href: "#" },
   { label: "Media", href: "#" },
@@ -17,8 +17,15 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-gray-100/90 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        
-
+        <a href="/" className="flex items-center">
+          <Image
+            src="/cssoc_logo.jpg"
+            alt="CS Society Logo"
+            width={44}
+            height={44}
+            className="object-cover rounded-full border-2 border-primary"
+          />
+        </a>
         <ul className={`${jetbrainsMono.className} hidden md:flex items-center gap-8 text-sm uppercase tracking-wide`}>
           {navLinks.map((link) => (
             <li key={link.label}>
