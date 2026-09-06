@@ -35,7 +35,7 @@ export default function Home() {
     </div>
     <div className="hidden md:flex justify-center items-center">
       <Image
-        src="/hero_new.png"
+        src="/hero_new.PNG"
         alt=""
         width={500}
         height={500}
