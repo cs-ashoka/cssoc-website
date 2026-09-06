@@ -17,9 +17,7 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-gray-100/90 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <a href="/" className="text-xl font-bold tracking-tight">
-          AUCSS
-        </a>
+        
 
         <ul className={`${jetbrainsMono.className} hidden md:flex items-center gap-8 text-sm uppercase tracking-wide`}>
           {navLinks.map((link) => (

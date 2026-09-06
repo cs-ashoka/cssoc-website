@@ -1,3 +1,2 @@
 # CS Society's Offical Website
-
-This is the repository for the CS Society's official website. The website is built using Next JS 14.
+The repository for CS Society's official website, 2026 version. The website is built using Next JS 14.
