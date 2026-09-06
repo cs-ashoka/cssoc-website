@@ -144,7 +144,7 @@ export default function Home() {
           Inductions open every semester. No prior experience required, just curiosity.
         </p>
         
-          <a href="/join"
+          <a href="https://cs-society-ashoka.github.io/Inductions"
           className={`${jetbrainsMono.className} inline-block bg-primary text-on-primary px-6 py-3 uppercase tracking-widest text-sm rounded hover:opacity-90 transition-opacity`}
         >
           Apply now
