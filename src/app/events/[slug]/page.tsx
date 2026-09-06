@@ -49,19 +49,7 @@ export default async function EventsPost({ params }: { params: { slug: string } 
 
   return (
     <main className={`w-full h-fit overflow-x-hidden`}>
-      <div className="-z-10 bottom-0 absolute w-full h-[86.5vh] overflow-hidden">
-        <span className="block w-full h-full relative overflow-hidden">
-          <Image
-            src={HeroImage}
-            priority
-            placeholder="blur"
-            alt="Person coding"
-            fill={true}
-            quality={100}
-            className="object-cover object-bottom w-full h-full"
-          />
-        </span>
-      </div>
+      
       {/* <div className={`absolute ml-1/5`}>/</div> */}
       <div className={`md:w-3/5 w-5/6 mx-auto mb-10`}>
         <div className={`md:bg-white bg-primary px-10 py-3 rounded-2xl w-full mx-auto md:mt-[4vh]`}>
