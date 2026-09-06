@@ -39,6 +39,7 @@ export default function Home() {
         alt=""
         width={500}
         height={500}
+        unoptimized
         className="w-full h-auto object-contain"
       />
     </div>
