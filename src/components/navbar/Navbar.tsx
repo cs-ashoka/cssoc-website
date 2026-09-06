@@ -37,7 +37,7 @@ export function Navbar() {
         </ul>
 
         
-  <a href="https://https://cs-society-ashoka.github.io/Inductions"
+  <a href="https://cs-society-ashoka.github.io/Inductions"
   target="_blank"
   rel="noopener noreferrer"
   className={`${jetbrainsMono.className} hidden md:inline-block bg-primary text-on-primary px-5 py-2 text-sm uppercase tracking-wide rounded hover:opacity-90 transition-opacity`}
