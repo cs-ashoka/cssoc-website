@@ -127,7 +127,9 @@ export default function Home() {
             </p>
           </div>
           
-            <a href="/archive"
+            <a href="https://cssoc-archive.vercel.app" 
+            target="_blank"
+            rel="noopener noreferrer"
             className={`${jetbrainsMono.className} border border-on-surface text-on-surface px-6 py-3 uppercase tracking-widest text-sm rounded hover:bg-surface transition-colors whitespace-nowrap`}
           >
             View old site
