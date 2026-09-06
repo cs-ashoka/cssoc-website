@@ -13,19 +13,7 @@ export default function about(){
     return(
         <>
         <main className={`w-full overflow-hidden`}>
-            <div className="-z-10 bottom-0 absolute w-full h-[87vh] overflow-hidden">
-                <span className="block w-full h-full relative overflow-hidden">
-                    <Image
-                        src={Background}
-                        priority
-                        placeholder="blur"
-                        alt="Hexagons background"
-                        quality={100}
-                        fill = {true}
-                        className="object-cover w-full h-full"
-                        />
-                </span>
-            </div>
+            
             <ToExpand />
             <div className={`flex flex-col items-center justify-center`}>
             <hr className="border-1 mt-8 w-1/2"></hr>                    
