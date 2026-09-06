@@ -7,7 +7,7 @@ export function Footer() {
         <div className="text-left">
           <div className="text-sm md:text-xl font-black tracking-tight mb-1">AUCSS</div>
           <p className="text-on-surface-variant text-[10px] md:text-sm">
-            © {new Date().getFullYear()} AUCSS.
+            © {new Date().getFullYear()} CS Society. All rights reserved.
           </p>
         </div>
         <div className={`${jetbrainsMono.className} flex flex-col items-end gap-2`}>
