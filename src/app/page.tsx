@@ -49,7 +49,7 @@ export default function Home() {
               AUCSS operates under a formal constitution that ensures transparency, academic integrity, and democratic representation for every CS student at Ashoka.
             </p>
             <p className="text-on-surface-variant mb-6 leading-relaxed text-sm">
-              Our governing document outlines the society's structure, election process, and member rights. We encourage everyone, members and prospective members alike, to read it.
+              Our governing document outlines the society&apos;s structure, election process, and member rights. We encourage everyone, members and prospective members alike, to read it.
             </p>
             
              <a href="/manifesto.pdf"
@@ -73,19 +73,19 @@ export default function Home() {
             <div className="bg-surface border border-border p-6 rounded-xl">
               <h3 className="text-xl font-semibold mb-2">Build stuff</h3>
               <p className="text-on-surface-variant text-sm">
-                Projects, hackathons, and dumb-but-fun weekend builds with other people who'll actually debug with you at 2am.
+                Projects, hackathons, and dumb-but-fun weekend builds with other people who&apos;ll actually debug with you at 2am.
               </p>
             </div>
             <div className="bg-surface border border-border p-6 rounded-xl">
               <h3 className="text-xl font-semibold mb-2">Learn together</h3>
               <p className="text-on-surface-variant text-sm">
-                Notes, workshops, and resources for everything from DSA to ML to "how do I even use git."
+                Notes, workshops, and resources for everything from DSA to ML to &quot;how do I even use git.&quot;
               </p>
             </div>
             <div className="bg-surface border border-border p-6 rounded-xl">
               <h3 className="text-xl font-semibold mb-2">Hang out</h3>
               <p className="text-on-surface-variant text-sm">
-                Events, socials, and a community that's a lot less serious than this website currently sounds.
+                Events, socials, and a community that&apos;s a lot less serious than this website currently sounds.
               </p>
             </div>
           </div>
