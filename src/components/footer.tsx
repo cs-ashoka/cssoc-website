@@ -1,8 +1,8 @@
 import { jetbrainsMono } from "@/utils/fonts";
 
 const credits = [
-  { role: "Designed by", names: ["Parth Agarwal"] },
-  { role: "Maintained by", names: ["Savyamm", "Anushka"] },
+  { role: "Designed by", names: [{ name: "Parth Agarwal", href: "https://parthagarwal.vercel.app/" }] },
+  { role: "Maintained by", names: [{ name: "Savyamm" }, { name: "Anushka" }] },
 ];
 
 export function Footer() {
@@ -37,7 +37,23 @@ export function Footer() {
           {credits.map((credit) => (
             <span key={credit.role} className="whitespace-nowrap">
               <span className="text-on-surface-variant/60">{credit.role}</span>{" "}
-              <span className="text-on-surface font-medium">{credit.names.join(", ")}</span>
+              {credit.names.map((person, i) => (
+                <span key={person.name} className="text-on-surface font-medium">
+                  {person.href ? (
+                    <a
+                      href={person.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      {person.name}
+                    </a>
+                  ) : (
+                    person.name
+                  )}
+                  {i < credit.names.length - 1 ? ", " : ""}
+                </span>
+              ))}
             </span>
           ))}
         </div>
