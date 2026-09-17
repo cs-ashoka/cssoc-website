@@ -1,7 +1,13 @@
 import { inter, jetbrainsMono } from "@/utils/fonts";
 import { Analytics } from '@vercel/analytics/react';
 import Image from "next/image";
+import { Reveal } from "@/components/reveal";
+import { getSortedPostsData } from "@/lib/event-posts";
+import { MdDescription } from "react-icons/md";
+
 export default function Home() {
+  const recentEvents = getSortedPostsData().slice(0, 2);
+
   return (
     <main className={`${inter.className} min-h-screen bg-background`}>
       {/* Hero */}
@@ -66,9 +72,9 @@ export default function Home() {
             
              <a href="/manifesto.pdf"
               target="_blank"
-              className={`${jetbrainsMono.className} inline-block border border-on-surface text-on-surface px-6 py-3 uppercase tracking-widest text-sm rounded hover:bg-surface-container-low transition-colors`}
+              className={`${jetbrainsMono.className} inline-flex items-center gap-2 border border-on-surface text-on-surface px-6 py-3 uppercase tracking-widest text-sm hover:bg-surface-container-low transition-colors`}
             >
-              View our constitution
+              View our constitution <MdDescription className="text-lg" />
             </a>
           </div>
         </div>
@@ -77,50 +83,101 @@ export default function Home() {
       {/* What we do */}
       <section className="py-20 px-6 bg-surface-container-low border-t border-border">
         <div className="max-w-5xl mx-auto">
-      
-          <h2 className="text-3xl font-semibold mb-10">
-            SOCIETY HIGHLIGHTS
-          </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-surface border border-border p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-2">Build stuff</h3>
+            <Reveal delayMs={0} className="group bg-surface border border-border p-6 rounded-xl card-glow">
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">Build stuff</h3>
               <p className="text-on-surface-variant text-sm">
                 Projects, hackathons, and dumb-but-fun weekend builds with other people who&apos;ll actually debug with you at 2am.
               </p>
-            </div>
-            <div className="bg-surface border border-border p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-2">Learn together</h3>
+            </Reveal>
+            <Reveal delayMs={100} className="group bg-surface border border-border p-6 rounded-xl card-glow">
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">Learn together</h3>
               <p className="text-on-surface-variant text-sm">
                 Notes, workshops, and resources for everything from DSA to ML to &quot;how do I even use git.&quot;
               </p>
-            </div>
-            <div className="bg-surface border border-border p-6 rounded-xl">
-              <h3 className="text-xl font-semibold mb-2">Hang out</h3>
+            </Reveal>
+            <Reveal delayMs={200} className="group bg-surface border border-border p-6 rounded-xl card-glow">
+              <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">Hang out</h3>
               <p className="text-on-surface-variant text-sm">
                 Events, socials, and a community that&apos;s a lot less serious than this website currently sounds.
               </p>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      {/* Upcoming Events teaser */}
+      {/* Society Highlights */}
       <section className="py-20 px-6 border-t border-border">
-        <div className="max-w-5xl mx-auto flex items-center justify-between flex-wrap gap-4">
-          <div>
-            <span
-              className={`${jetbrainsMono.className} text-primary uppercase tracking-widest text-xs block mb-2`}
+        <div className="max-w-5xl mx-auto">
+          <div className="flex items-end justify-between flex-wrap gap-4 mb-10">
+            <div>
+              <span
+                className={`${jetbrainsMono.className} text-primary uppercase tracking-widest text-xs block mb-2`}
+              >
+                Featured Opportunities
+              </span>
+              <h2 className="text-3xl font-semibold">Society Highlights</h2>
+            </div>
+            <a
+              href="/events"
+              className={`${jetbrainsMono.className} text-on-surface hover:text-primary uppercase tracking-widest text-sm transition-colors flex items-center gap-2`}
             >
-              CALENDAR_2026
-            </span>
-            <h2 className="text-3xl font-semibold">Upcoming events</h2>
+              View all →
+            </a>
           </div>
-          
-            <a href="/events"
-            className={`${jetbrainsMono.className} text-primary uppercase tracking-widest text-sm hover:underline`}
-          >
-            See all events →
-          </a>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <Reveal delayMs={0} className="group bg-surface border border-border p-4 rounded-xl card-glow">
+              <div className="relative overflow-hidden aspect-video rounded-lg mb-4 bg-on-surface flex items-center justify-center">
+                <span className={`${jetbrainsMono.className} text-white/40 text-xs uppercase tracking-widest`}>
+                  CS Mixer 2026
+                </span>
+                <span className="absolute top-2 right-2 bg-primary text-on-primary text-[10px] px-2 py-1 uppercase tracking-widest">
+                  Save the Date
+                </span>
+              </div>
+              <h3 className="text-lg font-semibold mb-1">CS Mixer 2026</h3>
+              <p className="text-on-surface-variant text-sm mb-4">
+                An evening to meet the society, grab food, and find your next project partner. Details dropping soon.
+              </p>
+              <div className="pt-3 border-t border-border flex justify-between items-center">
+                <span className={`${jetbrainsMono.className} text-xs text-on-surface-variant uppercase`}>
+                  Date TBA
+                </span>
+                <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+              </div>
+            </Reveal>
+
+            {recentEvents.map((event, i) => (
+              <Reveal
+                key={event.slug}
+                delayMs={(i + 1) * 100}
+                className="group bg-surface border border-border p-4 rounded-xl card-glow"
+              >
+                <div className="relative overflow-hidden aspect-video rounded-lg mb-4 bg-surface-container-low">
+                  {event.imgList?.[0] && (
+                    <Image
+                      src={event.imgList[0]}
+                      alt={event.title}
+                      fill
+                      unoptimized
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                  )}
+                </div>
+                <h3 className="text-lg font-semibold mb-1">{event.title}</h3>
+                <p className="text-on-surface-variant text-sm mb-4">
+                  Catch up on how it went, and see what&apos;s next on the events page.
+                </p>
+                <div className="pt-3 border-t border-border flex justify-between items-center">
+                  <span className={`${jetbrainsMono.className} text-xs text-on-surface-variant uppercase`}>
+                    {event.date}
+                  </span>
+                  <span className="text-primary group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
 
