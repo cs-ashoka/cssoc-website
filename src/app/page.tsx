@@ -32,7 +32,7 @@ export default function Home() {
       <p className="text-lg text-on-surface-variant max-w-xl mb-8">
         A student-run community for anyone into code, computers, and building weird (but cool!) stuff together.
       </p>
-      
+
         <a href="/about"
         className={`${jetbrainsMono.className} inline-block bg-primary text-on-primary px-6 py-3 uppercase tracking-widest text-sm rounded hover:opacity-90 transition-opacity`}
       >
@@ -213,7 +213,9 @@ export default function Home() {
           Inductions open every semester. No prior experience required, just curiosity.
         </p>
         
-          <a href="https://cs-society-ashoka.github.io/Inductions"
+          <a href="/join-us.html"
+          target="_blank"
+          rel="noopener noreferrer"
           className={`${jetbrainsMono.className} inline-block bg-primary text-on-primary px-6 py-3 uppercase tracking-widest text-sm rounded hover:opacity-90 transition-opacity`}
         >
           Apply now

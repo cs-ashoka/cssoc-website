@@ -1,5 +1,10 @@
 import { jetbrainsMono } from "@/utils/fonts";
 
+const credits = [
+  { role: "Designed by", names: ["Parth Agarwal"] },
+  { role: "Maintained by", names: ["Savyamm", "Anushka"] },
+];
+
 export function Footer() {
   return (
     <footer className="border-t border-border bg-surface-container-low">
@@ -19,6 +24,22 @@ export function Footer() {
             <a href="https://www.linkedin.com/company/cs-society-ashoka-universtiy/" className="text-on-surface-variant hover:text-primary transition-colors">LinkedIn</a>
           </div>
           <div className="text-[10px] md:text-xs text-on-surface-variant/60">v1.0.0</div>
+        </div>
+      </div>
+
+      <div className="group relative w-full h-7 hover:h-16 overflow-hidden border-t border-border bg-surface-container-low transition-all duration-300 flex items-center justify-center cursor-default">
+        <span className="absolute text-[10px] text-on-surface-variant/60 uppercase tracking-widest opacity-100 group-hover:opacity-0 transition-opacity duration-150">
+          Credits
+        </span>
+        <div
+          className={`${jetbrainsMono.className} absolute opacity-0 group-hover:opacity-100 transition-opacity duration-200 delay-100 flex flex-col md:flex-row items-center gap-1 md:gap-6 text-[10px] md:text-xs text-on-surface-variant uppercase tracking-wide text-center px-4`}
+        >
+          {credits.map((credit) => (
+            <span key={credit.role} className="whitespace-nowrap">
+              <span className="text-on-surface-variant/60">{credit.role}</span>{" "}
+              <span className="text-on-surface font-medium">{credit.names.join(", ")}</span>
+            </span>
+          ))}
         </div>
       </div>
     </footer>
