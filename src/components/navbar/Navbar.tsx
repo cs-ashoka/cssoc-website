@@ -29,8 +29,12 @@ export function Navbar() {
         <ul className={`${jetbrainsMono.className} hidden md:flex items-center justify-center gap-8 text-sm uppercase tracking-wide`}>
           {navLinks.map((link) => (
             <li key={link.label}>
-              <a href={link.href} className="text-on-surface-variant hover:text-primary transition-colors">
+              <a
+                href={link.href}
+                className="group relative text-on-surface-variant hover:text-primary transition-colors"
+              >
                 {link.label}
+                <span className="absolute left-0 -bottom-1 h-0.5 w-full origin-left scale-x-0 bg-primary transition-transform duration-300 ease-out group-hover:scale-x-100" />
               </a>
             </li>
           ))}
