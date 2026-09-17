@@ -7,11 +7,11 @@ import cn from "@/utils/cn";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Events", href: "/events" },
-  { label: "Projects", href: "#" },
-  { label: "Media", href: "#" },
-  { label: "Resources", href: "/resources" },
   { label: "About", href: "/about" },
+  { label: "Events", href: "/events" },
+  { label: "Projects", href: "/projects" },
+  { label: "Publications", href: "/publications" },
+  { label: "Resources", href: "/resources" },
 ];
 
 export function Navbar() {
