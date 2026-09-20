@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { jetbrainsMono } from "@/utils/fonts";
 import { Reveal } from "@/components/reveal";
 import { MdPerson, MdEmail } from "react-icons/md";
@@ -6,6 +7,8 @@ import { FaInstagram, FaLinkedin, FaXTwitter, FaGlobe } from "react-icons/fa6";
 type CommitteeMember = {
   name: string;
   role: string;
+  // Path under /public, e.g. "/team/parthagarwal.jpg". Falls back to a placeholder icon when omitted.
+  image?: string;
   socials?: {
     instagram?: string;
     linkedin?: string;
@@ -28,7 +31,7 @@ const coreCommittee: CommitteeMember[] = [
   { name: "Meyhar Lamba", role: "Director of Marketing" },
   { name: "Saachi Krishn", role: "Director of Marketing" },
   { name: "Jasmeh Sethi", role: "Deputy Director of Marketing" },
-  { name: "Gauri Makker", role: "Director of Broadcast" },  
+  { name: "Gauri Makker", role: "Director of Broadcast", socials: { linkedin: "https://www.linkedin.com/in/gaurimakker///" } },  
   { name: "Aaradhya Jain", role: "Director of Broadcast" },
   { name: "Saachi Khandeparkar", role: "Deputy Director of Broadcast" },
   { name: "Prisha Bindra", role: "Treasurer"},
@@ -96,8 +99,18 @@ export default function TeamPage() {
               delayMs={i * 100}
               className="group bg-surface border border-border rounded-xl p-4 flex flex-col gap-3 card-glow"
             >
-              <div className="aspect-square bg-surface-container-low rounded-lg flex items-center justify-center">
-                <MdPerson className="text-6xl text-on-surface-variant/40" />
+              <div className="relative aspect-square bg-surface-container-low rounded-lg flex items-center justify-center overflow-hidden">
+                {member.image ? (
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    sizes="(min-width: 1024px) 240px, (min-width: 768px) 33vw, 100vw"
+                    className="object-cover"
+                  />
+                ) : (
+                  <MdPerson className="text-6xl text-on-surface-variant/40" />
+                )}
               </div>
               <div>
                 <div className="h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full mb-2" />
