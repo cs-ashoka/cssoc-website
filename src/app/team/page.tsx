@@ -31,7 +31,7 @@ const coreCommittee: CommitteeMember[] = [
   { name: "Meyhar Lamba", role: "Director of Marketing" },
   { name: "Saachi Krishn", role: "Director of Marketing" },
   { name: "Jasmeh Sethi", role: "Deputy Director of Marketing" },
-  { name: "Gauri Makker", role: "Director of Broadcast", socials: { linkedin: "https://www.linkedin.com/in/gaurimakker///" } },  
+  { name: "Gauri Makker", role: "Director of Broadcast", socials: { linkedin: "https://www.linkedin.com/in/gaurimakker/" } },  
   { name: "Aaradhya Jain", role: "Director of Broadcast" },
   { name: "Saachi Khandeparkar", role: "Deputy Director of Broadcast" },
   { name: "Prisha Bindra", role: "Treasurer"},
